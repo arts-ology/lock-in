@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow, ipcMain, globalShortcut } = require("electron");
 const path = require("path");
 const fs = require("fs/promises");
 
@@ -40,7 +40,14 @@ function createWindow() {
   });
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  globalShortcut.register("Control+Shift+Q", () => {
+    app.quit();
+  });
+
+  createWindow();
+});
+
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
@@ -89,4 +96,8 @@ ipcMain.handle("log-session", async (event, session) => {
   history.push(session);
   await writeJSON(HISTORY_PATH, history);
   return history;
+}); 
+
+app.on("will-quit", () => {
+  globalShortcut.unregisterAll();
 });
