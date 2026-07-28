@@ -253,7 +253,8 @@ function openHistoryPanel() {
 }
 
 function closeHistoryPanel() {
-  historyPanelEl.classList.remove("visible");
+  historyPanelEl.classList.remove("visible"); 
+  historyPanelEl.classList.add("hidden");
 }
 
 async function renderHeatmap() {
