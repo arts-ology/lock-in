@@ -294,7 +294,7 @@ async function renderHeatmap() {
     heatmapEl.appendChild(cell);
   }
 
-  statsEl.textContent = totalSessions + " sessions completed";
+  statsEl.textContent = totalSessions + " sessions completed, all time";
 }
 
 function intensityClass(minutes) {
