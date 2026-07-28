@@ -303,62 +303,6 @@ body {
   color: var(--text-soft);
 }
 
-#history-panel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--background);
-  z-index: 10;
-  transform: translateY(100%);
-  transition: transform 0.3s ease; 
-  touch-action: none;
-}
 
-#history-panel.visible {
-  transform: translateY(0); 
-  pointer-events: auto;
-}
 
-#history-title {
-  margin: 0;
-  color: var(--text-main);
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
 
-#heatmap {
-  display: grid;
-  grid-template-columns: repeat(7, 18px);
-  grid-auto-rows: 18px;
-  gap: 4px;
-}
-
-.heat-cell {
-  border-radius: 4px;
-  background: rgba(255,255,255,0.5);
-  border: 1px solid rgba(255,255,255,0.7);
-}
-
-.heat-0 { background: rgba(255,255,255,0.35); }
-.heat-1 { background: var(--grad-2); }
-.heat-2 { background: var(--accent); opacity: 0.6; }
-.heat-3 { background: var(--accent); opacity: 0.85; }
-.heat-4 { background: var(--accent-dark); }
-
-#history-stats {
-  margin: 0;
-  color: var(--text-soft);
-  font-size: 13px;
-}
-
-#swipe-hint-down {
-  margin: 0;
-  font-size: 10px;
-  color: var(--text-soft);
-  opacity: 0.7;
-  position: absolute;
-  bottom: 12px;
-}

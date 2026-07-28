@@ -20,7 +20,6 @@ const quoteTextEl = document.getElementById("quote-text");
 const themeRowEl = document.getElementById("theme-row");
 const mainScreenEl = document.getElementById("main-screen");
 const screensaverEl = document.getElementById("screensaver");
-const historyPanelEl = document.getElementById("history-panel");
 const sparkleLayerEl = document.getElementById("sparkle-layer");
 const screensaverSparklesEl = document.getElementById("screensaver-sparkles");
 
@@ -226,84 +225,11 @@ function updateScreensaverClock() {
   document.addEventListener(evt, resetIdleTimer);
 });
 
-let pointerStartY = null;
 
-document.addEventListener("pointerdown", (e) => {
-  pointerStartY = e.clientY;
-});
 
-document.addEventListener("pointerup", (e) => {
-  if (pointerStartY === null) return;
 
-  const pointerEndY = e.clientY;
-  const deltaY = pointerStartY - pointerEndY;
-  const SWIPE_THRESHOLD = 60;
+//deleted history panel mwahahah
 
-  if (deltaY > SWIPE_THRESHOLD && !historyPanelEl.classList.contains("visible")) {
-    openHistoryPanel();
-  } 
-  
-  else if (deltaY < -SWIPE_THRESHOLD && historyPanelEl.classList.contains("visible")) {
-    closeHistoryPanel();
-  }
-
-  pointerStartY = null;
-});
-
-function openHistoryPanel() {
-  historyPanelEl.classList.remove("hidden");
-  historyPanelEl.classList.add("visible");
-  renderHeatmap();
-}
-
-function closeHistoryPanel() {
-  historyPanelEl.classList.remove("visible"); 
-  historyPanelEl.classList.add("hidden");
-}
-
-async function renderHeatmap() {
-  const history = await window.api.getHistory();
-  const heatmapEl = document.getElementById("heatmap");
-  const statsEl = document.getElementById("history-stats");
-  heatmapEl.innerHTML = "";
-
-  const DAYS = 35;
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const minutesByDay = {};
-  history.forEach((session) => {
-    if (!session.completed) return;
-    const day = new Date(session.timestamp);
-    day.setHours(0, 0, 0, 0);
-    const key = day.getTime();
-    minutesByDay[key] = (minutesByDay[key] || 0) + session.durationMinutes;
-  });
-
-  let totalSessions = history.filter((s) => s.completed).length;
-
-  for (let i = DAYS - 1; i >= 0; i--) {
-    const day = new Date(today);
-    day.setDate(day.getDate() - i);
-    const key = day.getTime();
-    const minutes = minutesByDay[key] || 0;
-
-    const cell = document.createElement("div");
-    cell.className = "heat-cell " + intensityClass(minutes);
-    cell.title = day.toDateString() + ": " + minutes + " min";
-    heatmapEl.appendChild(cell);
-  }
-
-  statsEl.textContent = totalSessions + " sessions completed, all time";
-}
-
-function intensityClass(minutes) {
-  if (minutes <= 0) return "heat-0";
-  if (minutes < 25) return "heat-1";
-  if (minutes < 50) return "heat-2";
-  if (minutes < 100) return "heat-3";
-  return "heat-4";
-}
 
 function spawnSparkles(container, count) {
   const symbols = ["\u2726", "\u2727", "\u2739", "\u22c6"];
