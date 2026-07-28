@@ -228,13 +228,14 @@ function updateScreensaverClock() {
 
 let touchStartY = null;
 
-document.addEventListener("touchstart", (e) => {
-  touchStartY = e.touches[0].clientY;
+document.addEventListener("pointerdown", (e) => {
+  touchStartY = e.clientY;
 });
 
-document.addEventListener("touchend", (e) => {
+document.addEventListener("pointerup", (e) => {
   if (touchStartY === null) return;
-  const touchEndY = e.changedTouches[0].clientY;
+
+  const touchEndY = e.clientY;
   const deltaY = touchStartY - touchEndY;
   const SWIPE_THRESHOLD = 60;
 
@@ -243,6 +244,7 @@ document.addEventListener("touchend", (e) => {
   } else if (deltaY < -SWIPE_THRESHOLD && historyPanelEl.classList.contains("visible")) {
     closeHistoryPanel();
   }
+
   touchStartY = null;
 });
 
