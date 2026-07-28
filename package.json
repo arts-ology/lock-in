@@ -1,0 +1,20 @@
+{
+  "name": "lock-in",
+  "version": "1.0.0",
+  "description": "Lock In! is an all-in-one study and productivity app designed to help users stay focused, manage their study time, and take productive breaks.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  }, 
+  "devDependencies": { 
+    "electron": "^31.0.0"
+  },
+  "keywords": [
+    "study",
+    "productivity",
+    "focus",
+    "time management",
+    "breaks"
+  ],
+  "author": "Arthi Kadalabalu Matha"
+}
