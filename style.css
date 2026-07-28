@@ -74,7 +74,9 @@ body {
 }
 
 .hidden {
-  display: none !important;
+  display: block !important; 
+  opacity: 0; 
+  visibility: hidden;
 }
 
 #sparkle-layer, #screensaver-sparkles {
@@ -165,7 +167,14 @@ body {
   padding: 3px 12px;
 }
 
-#stepper {
+#stepper { 
+  opacity: 1 ;
+  visibility: visible;   
+  max-height: 120px; 
+  overflow: hidden;
+  transition:  
+    opacity 1.1s ease-in-out, 
+    max-height 1s ease-in-out;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -173,7 +182,11 @@ body {
   border: 2px solid var(--pixel-border);
   border-radius: 20px;
   padding: 8px 14px;
-}
+} 
+
+#stepper.hidden { 
+  opacity: 0;
+  max-height: 0;}
 
 .step-btn {
   font-family: inherit;
@@ -193,7 +206,7 @@ body {
   box-shadow: 0 1px 0 var(--accent-dark);
 }
 
-#stepper-label {
+#stepper-label { 
   font-size: 1.6rem; 
   letter-spacing: 1px;
   color: var(--text-soft);
