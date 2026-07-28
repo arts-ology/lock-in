@@ -2,8 +2,8 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const fs = require("fs/promises");
 
-const SCREEN_WIDTH = 800;
-const SCREEN_HEIGHT = 480;
+const SCREEN_WIDTH = 1024;
+const SCREEN_HEIGHT = 600;
 
 const DATA_DIR = path.join(__dirname, "data");
 const QUOTES_PATH = path.join(DATA_DIR, "quotes.json");
@@ -15,7 +15,10 @@ let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT,
+    height: SCREEN_HEIGHT, 
+    resizable: false, 
+    fullscreen: true, 
+    frame: false,
     kiosk: true,
     autoHideMenuBar: true,
     webPreferences: {

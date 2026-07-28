@@ -57,8 +57,8 @@ body[data-theme="vanilla"] {
 
 html, body {
   margin: 0;
-  width: 800px;
-  height: 480px;
+  width: 1024px;
+  height: 600px;
   overflow: hidden;
   font-family: "Pixeboy"; 
   font-size: 1rem; 
