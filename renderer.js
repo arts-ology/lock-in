@@ -226,26 +226,28 @@ function updateScreensaverClock() {
   document.addEventListener(evt, resetIdleTimer);
 });
 
-let touchStartY = null;
+let pointerStartY = null;
 
 document.addEventListener("pointerdown", (e) => {
-  touchStartY = e.clientY;
+  pointerStartY = e.clientY;
 });
 
 document.addEventListener("pointerup", (e) => {
-  if (touchStartY === null) return;
+  if (pointerStartY === null) return;
 
-  const touchEndY = e.clientY;
-  const deltaY = touchStartY - touchEndY;
+  const pointerEndY = e.clientY;
+  const deltaY = pointerStartY - pointerEndY;
   const SWIPE_THRESHOLD = 60;
 
   if (deltaY > SWIPE_THRESHOLD && !historyPanelEl.classList.contains("visible")) {
     openHistoryPanel();
-  } else if (deltaY < -SWIPE_THRESHOLD && historyPanelEl.classList.contains("visible")) {
+  } 
+  
+  else if (deltaY < -SWIPE_THRESHOLD && historyPanelEl.classList.contains("visible")) {
     closeHistoryPanel();
   }
 
-  touchStartY = null;
+  pointerStartY = null;
 });
 
 function openHistoryPanel() {
@@ -292,7 +294,7 @@ async function renderHeatmap() {
     heatmapEl.appendChild(cell);
   }
 
-  statsEl.textContent = totalSessions + " sessions completed, all time";
+  statsEl.textContent = totalSessions + " sessions completed";
 }
 
 function intensityClass(minutes) {
