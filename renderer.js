@@ -253,8 +253,8 @@ async function init() {
   updateClockDisplay();
   showRandomQuote();
 
-  spawnSparkles(sparkleLayerEl, 12);
-  spawnSparkles(screensaverSparklesEl, 18);
+  spawnSparkles(sparkleLayerEl, 30);
+  spawnSparkles(screensaverSparklesEl, 40);
 
   playBtn.addEventListener("click", toggleTimer);
 
