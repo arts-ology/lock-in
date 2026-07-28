@@ -194,7 +194,8 @@ body {
 }
 
 #stepper-label {
-  font-size: 12px;
+  font-size: 1.6rem; 
+  letter-spacing: 1px;
   color: var(--text-soft);
   min-width: 62px;
   text-align: center;
