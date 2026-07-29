@@ -41,11 +41,11 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+  createWindow();
+
   globalShortcut.register("Control+Shift+Q", () => {
     app.quit();
   });
-
-  createWindow();
 });
 
 
