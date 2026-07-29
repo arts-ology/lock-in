@@ -134,10 +134,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 0;
 }
 
-#clock {
+#clock { 
+  margin-bottom: 8px;
   position: relative;
   font-family: "Pixeboy";
   font-size: 150px;
@@ -156,7 +157,8 @@ body {
   color: var(--accent-dark);
   font-size: 13px;
   letter-spacing: 3px;
-  text-transform: uppercase;
+  text-transform: uppercase; 
+  margin-bottom: 6px;
   font-weight: normal;
 }
 
@@ -167,26 +169,43 @@ body {
   padding: 3px 12px;
 }
 
-#stepper { 
-  opacity: 1 ;
-  visibility: visible;   
-  max-height: 120px; 
+#stepper {  
+  margin-bottom: 12px;
+  justify-content: center; 
+  flex-shrink: 0;
+  opacity: 1;
+  visibility: visible;
+  max-height: 120px;
   overflow: hidden;
-  transition:  
-    opacity 1.1s ease-in-out, 
-    max-height 1s ease-in-out;
-  display: flex;
+  display: flex; 
+  box-sizing: border-box;
   align-items: center;
   gap: 8px;
   background: var(--glass);
   border: 2px solid var(--pixel-border);
   border-radius: 20px;
   padding: 8px 14px;
-} 
 
-#stepper.hidden { 
+  transition:
+    opacity 0.4s ease-in-out,
+    max-height 0.8s ease-in-out 0.3s;
+}
+
+#stepper > * {
+  opacity: 1;
+  transition: opacity 0.3s ease; 
+  flex-shrink: 0;
+}
+
+#stepper.hidden {
   opacity: 0;
-  max-height: 0;}
+  max-height: 0;
+}
+
+#stepper.hidden > * {
+  opacity: 0; 
+  flex-shrink: 0;
+}
 
 .step-btn {
   font-family: inherit;
