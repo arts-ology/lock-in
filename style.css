@@ -8,8 +8,8 @@
   --grad-1: #e6d9ff;
   --grad-2: #c9b6ff;
   --accent: #9b7bf0;
-  --accent-dark: #7a58d1;
-  --text-main: #3d2c66;
+  --accent-dark: rgb(122, 88, 209);
+  --text-main: rgb(61, 44, 102);
   --text-soft: #6b5599;
   --glass: rgba(255, 255, 255, 0.55);
   --pixel-border: #7a58d1; 
@@ -336,6 +336,17 @@ body {
   color: var(--text-soft);
 }
 
+#companion {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin: 8px 0;
+}
+
+#companion img {
+  width: 80px;
+  height: 80px; 
+}
 
 
 
