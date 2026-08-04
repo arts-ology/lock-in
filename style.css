@@ -340,12 +340,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; 
-  margin: 8px 0;
+  margin: 4px 0;
 }
 
 #companion img {
   width: 80px;
-  height: 80px; 
+  height: 80px;  
+  image-rendering: pixelated; 
+
 }
 
 

@@ -268,4 +268,5 @@ async function init() {
   resetIdleTimer();
 }
 
-init();
+init(); 
+
