@@ -179,7 +179,7 @@ function applyTheme(themeName) {
     s.classList.toggle("active", s.dataset.theme === themeName);
   });
 
-  companionImg.src = `assets/companion/${companionThemes[themeName]}`;
+  companionImg.src = `assets/companions/${companionThemes[themeName]}`;
 }
 
 function setDefaultTheme(themeName) {
