@@ -1,9 +1,3 @@
-const companionThemes = {
-  lilac: "idle.gif",
-  sky: "idle-blue.gif",
-  bubblegum: "idle-pink.gif",
-  vanilla: "idle-yellow.gif",
-};
 
 let settings = { defaultTheme: "lilac", focusMinutes: 25, breakMinutes: 5, idleMinutes: 4 };
 let quotes = [];
@@ -29,6 +23,7 @@ const mainScreenEl = document.getElementById("main-screen");
 const screensaverEl = document.getElementById("screensaver");
 const sparkleLayerEl = document.getElementById("sparkle-layer");
 const screensaverSparklesEl = document.getElementById("screensaver-sparkles");
+const companionImg = document.getElementById("companion-img"); 
 
 function attachPressHandlers(element, { onTap, onLongPress, duration = 600, ringEl = null }) {
   let pressTimer = null;
@@ -173,10 +168,12 @@ quoteAreaEl.addEventListener("click", showRandomQuote);
 
 function applyTheme(themeName) {
   document.body.setAttribute("data-theme", themeName);
+
   document.querySelectorAll(".swatch").forEach((s) => {
-    s.classList.toggle("active", s.dataset.theme === themeName); 
-    companionImg.src = `assets/companion/${companionThemes[themeName]}`;
+    s.classList.toggle("active", s.dataset.theme === themeName);
   });
+
+  companionImg.src = `assets/companion/${companionThemes[themeName]}`;
 }
 
 function setDefaultTheme(themeName) {
