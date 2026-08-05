@@ -1,7 +1,13 @@
-
 let settings = { defaultTheme: "lilac", focusMinutes: 25, breakMinutes: 5, idleMinutes: 4 };
 let quotes = [];
 let quoteIndex = 0;
+
+const companionThemes = {
+  lilac: "idle.gif",
+  sky: "idle-blue.gif",
+  bubblegum: "idle-pink.gif",
+  vanilla: "idle-yellow.gif",
+};
 
 let mode = "focus";
 let remainingSeconds = 25 * 60;
