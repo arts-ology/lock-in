@@ -19,7 +19,7 @@ body[data-theme="sky"] {
   --grad-1: #d6f0ff;
   --grad-2: #a9dcff;
   --accent: #5fb8ea;
-  --accent-dark: #3d94c7;
+  --accent-dark: rgb(61, 148, 199);
   --text-main: #1f4a63;
   --text-soft: #3f7591;
   --glass: rgba(255, 255, 255, 0.6);
@@ -30,7 +30,7 @@ body[data-theme="bubblegum"] {
   --grad-1: #ffe0f0;
   --grad-2: #ffb8dd;
   --accent: #ff7ab8;
-  --accent-dark: #e2569a;
+  --accent-dark: rgb(226, 86, 154);
   --text-main: #6b1f47;
   --text-soft: #9a4a70;
   --glass: rgba(255, 255, 255, 0.6);
@@ -41,7 +41,7 @@ body[data-theme="vanilla"] {
   --grad-1: #fff8e0;
   --grad-2: #ffe9b3;
   --accent: #f2b84a;
-  --accent-dark: #d69820;
+  --accent-dark: rgb(214, 152, 32);
   --text-main: #5a4520;
   --text-soft: #8a6f3d;
   --glass: rgba(255, 255, 255, 0.6);
