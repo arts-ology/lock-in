@@ -2,8 +2,8 @@ const { app, BrowserWindow, ipcMain, globalShortcut } = require("electron");
 const path = require("path");
 const fs = require("fs/promises");
 
-const SCREEN_WIDTH = 1024;
-const SCREEN_HEIGHT = 600;
+const SCREEN_WIDTH = 200;
+const SCREEN_HEIGHT = 1440;
 
 const DATA_DIR = path.join(__dirname, "data");
 const QUOTES_PATH = path.join(DATA_DIR, "quotes.json");
