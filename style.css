@@ -2,6 +2,7 @@
   font-family: "Pixeboy"; 
   src: url("Pixeboy.ttf") format("truetype");
 }
+/* comment out the above line and uncomment the below line if you want to use the web font instead of the local font file */
 
 
 :root {
